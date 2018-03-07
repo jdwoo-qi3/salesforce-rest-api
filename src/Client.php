@@ -34,7 +34,7 @@ class Client implements LoggerAwareInterface
         AuthenticationInterface $authentication,
         Http\Client $guzzle,
         $apiRegion,
-        $apiVersion = 'v31.0',
+        $apiVersion = 'v42.0',
         LoggerInterface $log = null
     ) {
         $this->apiBaseUrl = str_replace(array('{region}', '{version}'), array($apiRegion, $apiVersion),

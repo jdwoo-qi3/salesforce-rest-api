@@ -21,8 +21,6 @@ class PasswordAuthentication implements AuthenticationInterface, LoggerAwareInte
     /** @var string */
     protected $password;
     /** @var string */
-    protected $securityToken;
-    /** @var string */
     protected $accessToken;
     /** @var Http\Client */
     private $guzzle;
@@ -32,7 +30,6 @@ class PasswordAuthentication implements AuthenticationInterface, LoggerAwareInte
         $clientSecret,
         $username,
         $password,
-        $securityToken,
         Http\Client $guzzle,
         LoggerInterface $log = null,
         $loginApiUrl = "https://login.salesforce.com/services/"
@@ -42,7 +39,6 @@ class PasswordAuthentication implements AuthenticationInterface, LoggerAwareInte
         $this->clientSecret = $clientSecret;
         $this->username = $username;
         $this->password = $password;
-        $this->securityToken = $securityToken;
         $this->guzzle = $guzzle;
         $this->guzzle->setBaseUrl($loginApiUrl);
     }
@@ -61,7 +57,7 @@ class PasswordAuthentication implements AuthenticationInterface, LoggerAwareInte
             'client_id' => $this->clientId,
             'client_secret' => $this->clientSecret,
             'username' => $this->username,
-            'password' => $this->password . $this->securityToken,
+            'password' => $this->password,
         );
         $request = $this->guzzle->post('oauth2/token', null, $postFields);
         $request->setAuth('user', 'pass');

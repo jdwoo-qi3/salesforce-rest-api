@@ -1,9 +1,9 @@
 {
-  "name": "gmo/salesforce-rest-api",
+  "name": "jdwoo-qi3/salesforce-rest-api",
   "license": "MIT",
   "require": {
-    "psr/log": "1.0.*",
-    "guzzle/guzzle": "3.9.*",
+    "psr/log": "*",
+    "guzzle/guzzle": "*",
     "php": ">=5.3"
   },
   "autoload": {
