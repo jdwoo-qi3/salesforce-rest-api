@@ -3,7 +3,7 @@
   "license": "MIT",
   "require": {
     "psr/log": "*",
-    "guzzle/guzzle": "*",
+    "guzzlehttp/guzzle": "*",
     "php": ">=5.3"
   },
   "autoload": {
